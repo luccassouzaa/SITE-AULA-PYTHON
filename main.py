@@ -16,4 +16,4 @@ def homepage():
     return render_template("index.html")
 
 #rodar
-socketio.run(app, host="localhost")
+socketio.run(app, host="192.168.0.150")
