@@ -30,9 +30,13 @@
                 console.log("Usuário conectado")
             })
 
+            socket.on("message", function(data){
+                console.log("Disparou uma mensagem")
+                $("#listMessage").append($("<p>").text(data))
+            })
+
             $("#botao").on("click", function(){
                 console.log("Clickou no botao");
-                $("#listMessage").append($("<p>").text("Teste"))
             })
         })
 
