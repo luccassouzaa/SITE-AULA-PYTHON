@@ -37,6 +37,7 @@
 
             $("#botao").on("click", function(){
                 console.log("Clickou no botao");
+                socket.send("Mensagem enviada pelo tunel")
             })
         })
 
