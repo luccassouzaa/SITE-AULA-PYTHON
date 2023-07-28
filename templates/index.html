@@ -25,12 +25,17 @@
             //LOGICA:
             // quando a pessoa clicar no "botao", quero que envie uma mensagem para mim
 
+            var socket = io("localhost:5000");
+            socket.on("connect", function(){
+                console.log("Usuário conectado")
+            })
+
             $("#botao").on("click", function(){
                 console.log("Clickou no botao");
-                $("#listMessage").append($("<p>").text($("Teste")))
+                $("#listMessage").append($("<p>").text("Teste"))
             })
         })
-        
+
 
         // $ = padrao
         // (document) nome do site inteiro - documento que eu quero aplicar o codigo

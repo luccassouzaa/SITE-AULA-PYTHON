@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send
 
+#criar variaveis
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
@@ -9,8 +10,10 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 def sendMessage(message):
     send(message, broadcast=True)
 
+#criar 1º rota
 @app.route("/")
 def homepage():
     return render_template("index.html")
 
-SocketIO.run(app, host="localhost")
+#rodar
+socketio.run(app, host="localhost")
